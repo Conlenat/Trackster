@@ -5,10 +5,12 @@ var Trackster = {};
 $(document).ready(function() {
   $('#search-button').click(function() {
     Trackster.searchTracksByTitle($('#search-input').val());
+    $("#search-input").val("");
   });
   $("#search-input").keypress(function (e) {
     if (e.which === 13) {
       $("#search-button").click();
+      $("#search-input").val("");
       return false;
     }
   });
